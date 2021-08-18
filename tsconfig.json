@@ -19,6 +19,7 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
+		// Add the following statement to enable absolute paths for React project.
 		"baseUrl": "src"
 	},
 	"include": [

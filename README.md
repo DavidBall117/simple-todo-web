@@ -9,7 +9,7 @@ A simple application to keep track of tasks.
 - Download and install [NodeJS version 14.x](https://nodejs.org/en/download/)
 - Install homebrew (package manager for macOS): `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Install yarn via homebrew: `brew install yarn`
-- (optional) Install the following VSCode extensions: ESLint, Prettier, GitLens, Adonis JS Goto Controller, EditorConfig for VS Code
+- (optional) Install the following VSCode extensions: ESLint, Prettier, GitLens, EditorConfig for VS Code
 - (optional) Open VSCode settings, go to Text Editor -> Formatting -> check Format On Save
 - Run the command `yarn` to install project dependencies.
 - Run the command `yarn start` to start the development server.
