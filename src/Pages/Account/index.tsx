@@ -1,4 +1,4 @@
-const Account = (): JSX.Element => {
+export default function Account(): JSX.Element {
 	return (
 		<div>
 			<p>
@@ -6,6 +6,4 @@ const Account = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default Account;
+}

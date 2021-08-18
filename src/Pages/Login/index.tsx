@@ -1,4 +1,4 @@
-const Login = (): JSX.Element => {
+export default function Login(): JSX.Element {
 	return (
 		<div>
 			<p>
@@ -6,6 +6,4 @@ const Login = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default Login;
+}

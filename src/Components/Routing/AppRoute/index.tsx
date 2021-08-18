@@ -1,16 +1,26 @@
-// function PrivateRoute ({component: Component, authed, ...rest}) {
-//   return (
-//     <Route
-//       {...rest}
-//       render={(props) => authed === true
-//         ? <Component {...props} />
-//         : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
-//     />
-//   )
-// }
+import { Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-// import { RouteProps } from 'react-router-dom';
+import { AppRouteProps } from './types';
 
-const AppRoute = () => {};
-
-export default AppRoute;
+export default function AppRoute({
+	title,
+	description,
+	path,
+	component,
+	exact,
+	authenticatedRoute
+}: AppRouteProps) {
+	return (
+		<Route
+			path={path}
+			exact={exact}
+		>
+			<Helmet>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+			</Helmet>
+			{component}
+		</Route>
+	);
+}

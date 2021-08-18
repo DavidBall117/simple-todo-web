@@ -1,4 +1,4 @@
-const Archive = (): JSX.Element => {
+export default function Archive(): JSX.Element {
 	return (
 		<div>
 			<p>
@@ -6,6 +6,4 @@ const Archive = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default Archive;
+}

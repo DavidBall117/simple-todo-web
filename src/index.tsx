@@ -1,15 +1,16 @@
-import React from 'react';
+// import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
 
+import 'Styles/_normalize.scss';
 import 'index.scss';
 
 ReactDOM.render(
-  // <React.StrictMode>
+  // <StrictMode>
   //   <App />
-  // </React.StrictMode>,
+  // </StrictMode>,
 	<App />,
   document.getElementById('root')
 );

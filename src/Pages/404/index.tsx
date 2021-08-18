@@ -1,4 +1,4 @@
-const NotFound = (): JSX.Element => {
+export default function NotFound(): JSX.Element {
 	return (
 		<div>
 			<p>
@@ -6,6 +6,4 @@ const NotFound = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default NotFound;
+}

@@ -1,4 +1,4 @@
-const Lists = (): JSX.Element => {
+export default function Lists(): JSX.Element {
 	return (
 		<div>
 			<p>
@@ -6,6 +6,4 @@ const Lists = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default Lists;
+}

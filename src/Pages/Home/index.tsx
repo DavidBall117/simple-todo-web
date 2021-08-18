@@ -1,4 +1,4 @@
-const Home = (): JSX.Element => {
+export default function Home(): JSX.Element {
 	return (
 		<div>
 			<p>
@@ -6,6 +6,4 @@ const Home = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default Home;
+}

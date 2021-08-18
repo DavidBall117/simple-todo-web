@@ -1,32 +1,28 @@
 import { Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { BrowserRouter, Switch } from 'react-router-dom';
 
+import AppRoute from 'Components/Routing/AppRoute';
 import routes from 'Constants/routes';
 import { RouteData } from 'Constants/types';
+import PageLoading from 'Components/Routing/PageLoading';
 
-const App = () => {
+export default function App() {
 	return (
-		<Router>
-			<Suspense fallback={<div>Loading...</div>}>
+		<BrowserRouter>
+			<Suspense fallback={PageLoading}>
 				<Switch>
 					{routes.map((route: RouteData) => (
-						<Route
-							key={route.path}
+						<AppRoute
+							title={route.title}
+							description={route.description}
 							path={route.path}
+							component={route.component}
 							exact={route.exact}
-						>
-							<Helmet>
-								<title>{route.title}</title>
-								<meta name="description" content={route.description} />
-							</Helmet>
-							{route.component}
-						</Route>
+							authenticatedRoute={route.authenticatedRoute}
+						/>
 					))}
 				</Switch>
 			</Suspense>
-		</Router>
+		</BrowserRouter>
 	);
-};
-
-export default App;
+}

@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 
-import { ListParams } from 'Pages/List/types';
+import { ListParams } from './types';
 
-const List = (): JSX.Element => {
+export default function List(): JSX.Element {
 	const { id } = useParams<ListParams>();
 	return (
 		<div>
@@ -11,6 +11,4 @@ const List = (): JSX.Element => {
 			</p>
 		</div>
 	);
-};
-
-export default List;
+}
