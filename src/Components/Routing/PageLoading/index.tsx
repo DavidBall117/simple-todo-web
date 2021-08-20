@@ -1,5 +1,11 @@
-export default function PageLoading() {
+import Pulse from 'Components/Common/Loaders/Pulse';
+
+import styles from './styles.module.scss';
+
+export default function PageLoading(): JSX.Element {
 	return (
-		<div>Loading...</div>
+		<div className={styles.container}>
+			<Pulse />
+		</div>
 	);
 }

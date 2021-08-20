@@ -5,6 +5,7 @@ import { RouteData } from './types';
 const NotFound = lazy(() => import('Pages/404'));
 const Account = lazy(() => import('Pages/Account'));
 const Archive = lazy(() => import('Pages/Archive'));
+const CreateAccount = lazy(() => import('Pages/CreateAccount'));
 const Home = lazy(() => import('Pages/Home'));
 const List = lazy(() => import('Pages/List'));
 const Lists = lazy(() => import('Pages/Lists'));
@@ -23,6 +24,12 @@ const routes: RouteData[] = [
 		description: 'Login to your account and get started managing your to-do lists.',
 		path: '/login',
 		component: <Login />
+	},
+	{
+		title: 'Create Account | simple-todo',
+		description: 'Create an account and get started making your to-do lists.',
+		path: '/create-account',
+		component: <CreateAccount />
 	},
 	{
 		title: 'Account | simple-todo',
