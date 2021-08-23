@@ -6,7 +6,7 @@ export type LoginRequestData = {
 export type LoginResponseData = {
 	type: string;
 	token: string;
-	expires_at: Date;
+	expires_at: string;
 }
 
 export type LoginResponse = {

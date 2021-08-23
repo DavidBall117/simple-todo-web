@@ -1,15 +1,20 @@
 // Most displayed colour in apps UI elements.
 $primary-colour: #560764;
 // Accent colour that is applied sparingly (e.g. floating buttons, input controls, selected text, progress bars, links, headlines)
-$secondary-colour: #d2b7c9;
+$secondary-colour: #ffd5e5;
+// Use in conjuction with secondary colour for gradients and hover/focus states
+$tertiary-colour: #ddadff;
 
 // Used for components placed on top of the background (e.g. card, sheet, menu components).
-$surface-colour: #7838a8;
+$surface-colour: #7f0a94;
 // Doesn't represent brand. Either very light or very dark depending on theme.
-$background-colour: #af85db;
+$background-colour: $primary-colour;
 
-$primary-text-colour: #eee;
-$secondary-text-colour: #000;
+$primary-text-colour: #fff;
+$secondary-text-colour: $secondary-colour;
 
 $disabled-colour: #9b9b9b;
-$error-colour: #f67280;
+$success-colour: #d6ebd1;
+$info-colour: #e1f2fb;
+$warning-colour: #fcf7bb;
+$error-colour: #fcdede;

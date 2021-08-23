@@ -1,0 +1,76 @@
+@import "Styles/_colours";
+
+.group {
+	position: relative;
+	width: 100%;
+	padding: 1rem 0 0;
+	margin: 1rem 0;
+}
+
+.field {
+	color: $primary-text-colour;
+	background: transparent;
+	width: 100%;
+	font-family: inherit;
+	font-size: 1.3rem;
+	border: 0;
+	border-bottom: 2px solid $secondary-colour;
+	outline: 0;
+	padding: 7px 0;
+	margin-bottom: 4px;
+	transition: border-color 0.2s;
+	&::placeholder {
+		color: transparent;
+	}
+	&:placeholder-shown ~ .label {
+		font-size: 1.3rem;
+		cursor: text;
+		top: 20px;
+	}
+	&:focus {
+		~ .label {
+			position: absolute;
+			top: 0;
+			display: block;
+			transition: 0.2s;
+			font-size: 1rem;
+			color: $tertiary-colour;
+			font-weight: 700;
+		}
+		padding-bottom: 6px;
+		font-weight: 700;
+		border-width: 3px;
+		border-image: linear-gradient(
+			to right,
+			$tertiary-colour,
+			$secondary-colour
+		);
+		border-image-slice: 1;
+	}
+	&:required,
+	&:invalid {
+		box-shadow: none;
+	}
+	&:disabled {
+		~ .label {
+			color: $disabled-colour;
+		}
+		color: $disabled-colour;
+		border-bottom: 2px solid $disabled-colour;
+		cursor: not-allowed;
+	}
+}
+
+.label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: $secondary-colour;
+}
+
+.error {
+	color: $error-colour;
+	font-size: small;
+}

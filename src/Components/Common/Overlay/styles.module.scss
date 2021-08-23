@@ -1,7 +1,8 @@
 @import "Styles/_colours";
+@import "Styles/_variables";
 
 .container {
-	z-index: 1;
+	z-index: $overlay-index;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -10,5 +11,5 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: $secondary-colour;
+	background-color: $tertiary-colour;
 }

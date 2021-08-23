@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function useTimeout(callback: () => void, delay: number | null) {
+export default function useTimeout(callback: () => void, delay: number | null | undefined) {
 	const savedCallback = useRef(callback);
 
 	useEffect(() => {
@@ -8,7 +8,7 @@ export default function useTimeout(callback: () => void, delay: number | null) {
 	}, [callback]);
 
 	useEffect(() => {
-		if (delay === null) return;
+		if (delay === null || typeof delay === 'undefined') return;
 		const id = setTimeout(() => savedCallback.current(), delay);
 		return () => clearTimeout(id);
 	}, [delay]);

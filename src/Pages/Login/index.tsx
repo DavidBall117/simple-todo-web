@@ -1,49 +1,85 @@
 import { FormProvider } from 'react-hook-form';
 
 import { emailRegExp } from 'Constants/regexp';
-import TextInput from 'Components/Common/Input/TextInput';
-import Button from 'Components/Common/Input/Button';
+import AppLink from 'Components/Routing/AppLink';
+import Button from 'Components/Input/Button';
+import Checkbox from 'Components/Input/Checkbox';
+import Heading from 'Components/Common/Heading';
+import Overlay from 'Components/Common/Overlay';
+import TextInput from 'Components/Input/TextInput';
+import Toast from 'Components/Common/Toast';
 
 import useLogin from './useLogin';
 import styles from './styles.module.scss';
 
 export default function Login(): JSX.Element {
 	const {
+		isLoading,
+		showPassword,
 		methods,
-		onSubmit
+		showToast,
+		toastType,
+		toastTitle,
+		toastBody,
+		onCloseToast,
+		onSubmit,
+		onToggleShowPassword
 	} = useLogin();
 
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.heading}>
+			<Overlay
+				show={isLoading}
+			/>
+			<Heading>
 				simple-todo
-			</h1>
+			</Heading>
 			<FormProvider {...methods}>
-				<form onSubmit={methods.handleSubmit(onSubmit)}>
+				<form className={styles.form} onSubmit={methods.handleSubmit(onSubmit)}>
 					<TextInput
 						label="email"
-						errorMessage="Please enter a valid email address."
+						errorMessage="please enter a valid email address"
 						name="email"
 						required
 						minLength={1}
 						maxLength={50}
 						pattern={emailRegExp}
+						disabled={isLoading}
 					/>
 					<TextInput
 						label="password"
-						errorMessage="Please enter a password."
-						type="password"
+						errorMessage="please enter a password"
+						type={showPassword ? "text" : "password"}
 						name="password"
 						required
 						minLength={1}
 						maxLength={50}
+						disabled={isLoading}
+					/>
+					<Checkbox
+						label="show password"
+						id="ShowPassword"
+						value={showPassword}
+						onChange={onToggleShowPassword}
 					/>
 					<Button
-						submit
 						label="log in"
+						disabled={isLoading}
+						submit
 					/>
 				</form>
 			</FormProvider>
+			<AppLink
+				to="/create-account"
+				label="create account"
+			/>
+			<Toast
+				title={toastTitle}
+				body={toastBody}
+				show={showToast}
+				onClose={onCloseToast}
+				type={toastType}
+			/>
 		</div>
 	);
 }

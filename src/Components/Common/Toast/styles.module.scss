@@ -1,0 +1,94 @@
+@import "Styles/_colours";
+@import "Styles/_layout";
+@import "Styles/_variables";
+
+.toastContainer {
+	z-index: $overlay-index;
+	color: $primary-colour;
+	background-color: $secondary-text-colour;
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease-in-out;
+	position: absolute;
+	bottom: 0.75rem;
+	left: 0.75rem;
+	right: 0.75rem;
+	@include tablet {
+		top: unset;
+		bottom: 1rem;
+		left: 3rem;
+		right: 3rem;
+	}
+	@include laptop {
+		top: unset;
+		bottom: 1.5rem;
+		left: 6rem;
+		right: 6rem;
+	}
+	@include desktop {
+		top: unset;
+		bottom: 2rem;
+		left: 2rem;
+		right: 0;
+		max-width: 600px;
+	}
+}
+
+.show {
+	opacity: 1;
+	visibility: unset;
+}
+
+.success {
+	background-color: $success-colour;
+}
+
+.info {
+	background-color: $info-colour;
+}
+
+.warning {
+	background-color: $warning-colour;
+}
+
+.error {
+	background-color: $error-colour;
+}
+
+.toastTitleContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.2rem;
+	border-bottom: solid thin $primary-colour;
+	span {
+		font-weight: bolder;
+	}
+}
+
+.toastTitleBody {
+	margin-top: 1rem;
+}
+
+.closeButton {
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	border-radius: 50%;
+	color: $primary-colour;
+	height: 30px;
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:hover {
+		background-color: rgba($tertiary-colour, 0.2);
+	}
+	&:focus-visible {
+		outline: dashed thin $tertiary-colour;
+	}
+}

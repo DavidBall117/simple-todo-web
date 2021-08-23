@@ -1,0 +1,35 @@
+@import "Styles/_colours";
+
+.button {
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	color: $primary-colour;
+	background-color: $secondary-colour;
+	border: none;
+	border-radius: 8px;
+	font-weight: bolder;
+	cursor: pointer;
+	transition: color 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out;
+	&:hover {
+		background-color: $tertiary-colour;
+	}
+	&:focus-visible {
+		outline: dashed thin $tertiary-colour;
+	}
+	&:disabled {
+		background-color: $disabled-colour;
+		cursor: not-allowed;
+	}
+}
+.secondary {
+	color: $secondary-colour;
+	background-color: transparent;
+	border: solid thin $secondary-colour;
+	&:hover {
+		color: $primary-colour;
+	}
+}

@@ -8,6 +8,7 @@ export default function TextInput({
 	name,
 	type,
 	label,
+	disabled,
 	required,
 	minLength,
 	maxLength,
@@ -25,6 +26,7 @@ export default function TextInput({
 				type={type ?? 'text'}
 				id={id ?? name}
 				placeholder={label}
+				disabled={disabled}
 				{...register(name, {
 					required,
 					minLength,
@@ -34,7 +36,8 @@ export default function TextInput({
 			/>
 			<label
 				className={styles.label}
-				htmlFor={name}>
+				htmlFor={name}
+			>
 					{label}
 			</label>
 			{formState.errors[name] && errorMessage && (

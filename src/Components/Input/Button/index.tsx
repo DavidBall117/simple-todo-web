@@ -3,15 +3,16 @@ import { ButtonProps } from './types';
 
 export default function Button({
 	label,
-	primary,
+	disabled,
 	secondary,
 	onClick,
 	submit
 }: ButtonProps): JSX.Element {
 	return (
 		<button
-			className={`${styles.button} ${primary ? styles.primary : ''} ${secondary? styles.secondary : ''}`.trim()}
+			className={`${styles.button} ${secondary? styles.secondary : ''}`.trim()}
 			onClick={onClick}
+			disabled={disabled}
 			type={submit ? 'submit' : 'button'}
 		>
 			{label}

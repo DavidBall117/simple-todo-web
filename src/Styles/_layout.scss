@@ -1,4 +1,40 @@
-$mobile-breakpoint: 576px;
-$tablet-breakpoint: 768px;
-$laptop-breakpoint: 992px;
-$desktop-breakpoint: 1200px;
+$tablet-width: 600px;
+$laptop-width: 960px;
+$desktop-width: 1280px;
+
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$laptop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media (min-width: #{$laptop-width}) and (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin container {
+	display: flex;
+	flex-direction: column;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	@include tablet {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	@include laptop {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+	@include desktop {
+		padding-left: 8rem;
+		padding-right: 8rem;
+	}
+}

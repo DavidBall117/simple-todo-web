@@ -2,7 +2,7 @@ import { MouseEventHandler } from 'react';
 
 export type ButtonProps = {
 	label: string;
-	primary?: boolean;
+	disabled?: boolean;
 	secondary?: boolean;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	submit?: boolean;

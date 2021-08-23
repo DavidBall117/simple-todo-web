@@ -5,13 +5,13 @@ import AuthContextProvider from 'Contexts/AuthContext';
 import AppRoute from 'Components/Routing/AppRoute';
 import routes from 'Constants/routes';
 import { RouteData } from 'Constants/types';
-import PageLoading from 'Components/Routing/PageLoading';
+import Overlay from 'Components/Common/Overlay';
 
 export default function App() {
 	return (
-		<AuthContextProvider>
-			<BrowserRouter>
-				<Suspense fallback={<PageLoading />}>
+		<BrowserRouter>
+			<AuthContextProvider>
+				<Suspense fallback={<Overlay />}>
 					<Switch>
 						{routes.map((route: RouteData) => (
 							<AppRoute
@@ -26,7 +26,7 @@ export default function App() {
 						))}
 					</Switch>
 				</Suspense>
-			</BrowserRouter>
-		</AuthContextProvider>
+			</AuthContextProvider>
+		</BrowserRouter>
 	);
 }

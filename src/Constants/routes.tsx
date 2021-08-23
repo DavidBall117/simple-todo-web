@@ -17,7 +17,8 @@ const routes: RouteData[] = [
 		description: 'Home page for simple-todo application.',
 		path: '/',
 		component: <Home />,
-		exact: true
+		exact: true,
+		authenticatedRoute: true
 	},
 	{
 		title: 'Login | simple-todo',

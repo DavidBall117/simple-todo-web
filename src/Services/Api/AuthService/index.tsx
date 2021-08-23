@@ -1,4 +1,4 @@
-import useRestService from 'Services/Generic/RestService';
+import useRestService from 'Services/Common/RestService';
 
 import { LoginRequestData, LoginResponseData, LoginResponse } from './types';
 
@@ -8,8 +8,8 @@ export default function useAuthService() {
 		deleteWithAuth
 	} = useRestService();
 
-	const login = async (request: LoginRequestData): Promise<LoginResponse> => {
-		return await post<LoginRequestData, LoginResponseData>('/login', request);
+	const login = (request: LoginRequestData): Promise<LoginResponse> => {
+		return post<LoginRequestData, LoginResponseData>('/login', request);
 	};
 
 	const logout = async (): Promise<number> => {

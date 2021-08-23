@@ -1,0 +1,88 @@
+@import "Styles/_colours";
+
+.checkboxContainer {
+	color: $secondary-colour;
+	font-weight: bolder;
+	padding: 1rem 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	* {
+		box-sizing: border-box;
+	}
+}
+
+.checkboxInput {
+	position: absolute;
+	visibility: hidden;
+}
+
+.checkbox {
+	user-select: none;
+	cursor: pointer;
+	display: flex;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	padding: 0.4rem 0.5rem;
+	border-radius: 6px;
+	&:not(:last-child) {
+		margin-right: 6px;
+	}
+	&:hover {
+		background: rgba($tertiary-colour, 0.1);
+	}
+	span {
+		vertical-align: middle;
+		transform: translate3d(0, 0, 0);
+		&:first-child {
+			background-color: $secondary-colour;
+			position: relative;
+			flex: 0 0 18px;
+			width: 18px;
+			height: 18px;
+			border-radius: 4px;
+			transform: scale(1);
+			transition: all 0.3s ease;
+			svg {
+				stroke: $primary-text-colour;
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				fill: none;
+				stroke-dasharray: 16px;
+				stroke-dashoffset: 16px;
+				transform: translate3d(0, 0, 0);
+				transition: all 0.3s ease;
+			}
+		}
+		&:last-child {
+			padding-left: 8px;
+			line-height: 18px;
+		}
+	}
+}
+
+.checkboxSymbol {
+	position: absolute;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+	user-select: none;
+}
+
+.checkboxInput:checked + .checkbox span:first-child {
+	background: transparent;
+	animation: zoom-in-out 0.3s ease;
+}
+
+.checkboxInput:checked + .checkbox span:first-child svg {
+	stroke-dashoffset: 0;
+}
+
+@keyframes zoom-in-out {
+	50% {
+		transform: scale(0.9);
+	}
+}
