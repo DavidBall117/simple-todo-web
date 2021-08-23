@@ -4,6 +4,7 @@ import { emailRegExp } from 'Constants/regexp';
 import AppLink from 'Components/Routing/AppLink';
 import Button from 'Components/Input/Button';
 import Checkbox from 'Components/Input/Checkbox';
+import FocusedLayout from 'Layouts/FocusedLayout';
 import Heading from 'Components/Common/Heading';
 import Overlay from 'Components/Common/Overlay';
 import TextInput from 'Components/Input/TextInput';
@@ -27,7 +28,7 @@ export default function Login(): JSX.Element {
 	} = useLogin();
 
 	return (
-		<div className={styles.container}>
+		<FocusedLayout>
 			<Overlay
 				show={isLoading}
 			/>
@@ -80,6 +81,6 @@ export default function Login(): JSX.Element {
 				onClose={onCloseToast}
 				type={toastType}
 			/>
-		</div>
+		</FocusedLayout>
 	);
 }

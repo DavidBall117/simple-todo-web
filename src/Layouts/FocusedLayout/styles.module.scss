@@ -1,0 +1,10 @@
+@import "Styles/_layout";
+@import "Styles/_colours";
+
+.focused {
+	@include container;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: $background-colour;
+}
