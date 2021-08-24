@@ -1,8 +1,9 @@
 import styles from './styles.module.scss';
+import { BounceProps } from './types';
 
-export default function Bounce(): JSX.Element {
+export default function Bounce({ secondary }: BounceProps): JSX.Element {
 	return (
-		<div className={styles.bounce}>
+		<div className={`${styles.bounce} ${secondary ? styles.secondary : ''}`.trim()}>
 			<div />
 			<div />
 			<div />

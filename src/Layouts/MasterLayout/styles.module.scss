@@ -27,6 +27,14 @@
 
 .main {
 	padding: 0.5rem 2rem;
+	flex: 1;
+}
+
+.loading {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer {

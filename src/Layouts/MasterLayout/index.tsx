@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+
+import Bounce from 'Components/Loaders/Bounce';
 import routes from 'Constants/routes';
 import { RouteData } from 'Constants/types';
 
@@ -14,9 +17,9 @@ export default function MasterLayout({ children, loading }: MasterLayoutProps): 
 				<ul>
 					{routes.map((route: RouteData) => (
 						<li key={route.path}>
-							<a href={route.path}>
+							<Link to={route.path}>
 								{route.title}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>
@@ -24,8 +27,8 @@ export default function MasterLayout({ children, loading }: MasterLayoutProps): 
 			<div className={styles.mainContainer}>
 				<main className={styles.main}>
 					{loading ? (
-						<div>
-							Loading...
+						<div className={styles.loading}>
+							<Bounce secondary />
 						</div>
 					) : (
 						children
