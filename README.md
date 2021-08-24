@@ -20,3 +20,10 @@ A simple application to keep track of tasks.
 - `yarn test` - Launch test runner in interactive mode.
 - `yarn build` - Builds production version of the application.
 - `yarn eject` - Removes the single build dependency from project so you can customize the configurations. This is a one-way operation.
+
+# TODO
+
+- [ ] Internationalization
+- [ ] Storybook integration.
+- [ ] Ability to reset password.
+- [ ] Record completion date for list items and present analytics to user.
