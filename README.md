@@ -23,7 +23,18 @@ A simple application to keep track of tasks.
 
 # TODO
 
+- [ ] Complete navigation, along with navigation drawer and floating button for mobile.
+- [ ] Create private routes.
+- [ ] 404 page.
+- [ ] Account page.
+- [ ] CreateAccount page.
+- [ ] Logout page.
+- [ ] Lists page.
+- [ ] List page.
+- [ ] Archive page.
+- [ ] Use fontawesome icons.
 - [ ] Internationalization
 - [ ] Storybook integration.
+- [ ] Snapshot and unit testing.
 - [ ] Ability to reset password.
 - [ ] Record completion date for list items and present analytics to user.
