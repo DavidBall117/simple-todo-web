@@ -20,6 +20,13 @@
 	}
 }
 
+@keyframes slide-in-bottom {
+	to {
+		opacity: 1;
+		bottom: 0;
+	}
+}
+
 .animation {
 	position: relative;
 	animation-delay: $short;
@@ -35,4 +42,9 @@
 .right {
 	animation: slide-in-right $long forwards;
 	right: -300px;
+}
+
+.bottom {
+	animation: slide-in-bottom $long forwards;
+	bottom: -300px;
 }

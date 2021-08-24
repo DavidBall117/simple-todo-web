@@ -1,0 +1,36 @@
+@import "Styles/_colours";
+@import "Styles/_variables";
+
+.container {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	background: $surface-colour;
+}
+
+.nav {
+	z-index: $nav-index;
+	display: flex;
+	flex-direction: column;
+	background-color: $background-colour;
+}
+
+.mainContainer {
+	flex: 1;
+	overflow: auto;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.main {
+	padding: 0.5rem 2rem;
+}
+
+.footer {
+	padding: 1rem;
+	background-color: $tertiary-colour;
+	color: $primary-colour;
+	display: flex;
+	justify-content: center;
+	font-weight: bolder;
+}
