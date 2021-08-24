@@ -1,0 +1,19 @@
+@import "Styles/_colours";
+
+.container {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	background-color: $surface-colour;
+}
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	background-color: $background-colour;
+}
+
+.main {
+	flex: 1;
+	padding: 0.5rem 2rem;
+}

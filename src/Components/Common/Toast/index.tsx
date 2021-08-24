@@ -1,21 +1,6 @@
 import styles from './styles.module.scss';
 import { ToastProps } from './types';
 
-function getStyle(type: 'success' | 'info' | 'warning' | 'error'): string {
-	switch(type) {
-		case 'success':
-			return styles.success;
-		case 'info':
-			return styles.info;
-		case 'warning':
-			return styles.warning;
-		case 'error':
-			return styles.error;
-		default:
-			return '';
-	}
-}
-
 export default function Toast({
 	title,
 	body,
@@ -25,7 +10,7 @@ export default function Toast({
 }: ToastProps): JSX.Element {
 	return (
 		<div
-			className={`${styles.toastContainer} ${show ? styles.show : ''} ${type ? getStyle(type) : ''}`.trim()}
+			className={`${styles.toastContainer} ${show ? styles.show : ''} ${type ? styles[type] : ''}`.trim()}
 			aria-hidden={!show}
 		>
 			<div className={styles.toastTitleContainer}>

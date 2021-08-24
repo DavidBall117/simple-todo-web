@@ -8,16 +8,16 @@ export default function useAuthService() {
 		deleteWithAuth
 	} = useRestService();
 
-	const login = (request: LoginRequestData): Promise<LoginResponse> => {
+	function login(request: LoginRequestData): Promise<LoginResponse> {
 		return post<LoginRequestData, LoginResponseData>('/login', request);
 	};
 
-	const logout = async (): Promise<number> => {
+	async function logout(): Promise<number> {
 		const res = await deleteWithAuth('/logout');
 		return res.status;
 	};
 
-	const logoutAll = async (): Promise<number> => {
+	async function logoutAll(): Promise<number> {
 		const res = await deleteWithAuth('/logout-all');
 		return res.status;
 	};

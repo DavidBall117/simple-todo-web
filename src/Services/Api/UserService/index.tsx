@@ -18,25 +18,25 @@ export default function useUserService() {
 		deleteWithAuth
 	} = useRestService();
 
-	const isEmailTaken = async (email: string): Promise<boolean | null> => {
+	async function isEmailTaken(email: string): Promise<boolean | null> {
 		const res = await get<boolean>(`/user/is-email-taken/${email}`);
 		return res.data;
 	};
 
-	const createUser = (request: CreateUserRequestData): Promise<CreateUserResponse> => {
-		return post<CreateUserRequestData, CreateUserResponseData>('/user', request);
+	async function createUser(request: CreateUserRequestData): Promise<CreateUserResponse> {
+		return await post<CreateUserRequestData, CreateUserResponseData>('/user', request);
 	};
 
-	const getUser = (): Promise<GetUserResponse> => {
-		return getWithAuth<GetUserResponseData>('/user');
+	async function getUser(): Promise<GetUserResponse> {
+		return await getWithAuth<GetUserResponseData>('/user');
 	};
 
-	const updateUser = async (request: UpdateUserRequestData): Promise<number> => {
+	async function updateUser(request: UpdateUserRequestData): Promise<number> {
 		const res = await putWithAuth('/user', request);
 		return res.status;
 	};
 
-	const deleteUser = async (): Promise<number> => {
+	async function deleteUser(): Promise<number> {
 		const res = await deleteWithAuth('user');
 		return res.status;
 	};

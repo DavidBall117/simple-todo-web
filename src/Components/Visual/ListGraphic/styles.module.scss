@@ -1,0 +1,67 @@
+@import "Styles/_colours";
+
+.graphic {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 275px;
+	width: 200px;
+	border-radius: 1.7rem;
+	background-color: $tertiary-colour;
+	position: relative;
+	margin-top: 20px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	span {
+		position: absolute;
+		top: -10px;
+		left: 50px;
+		height: 30px;
+		width: 100px;
+		background-color: $tertiary-colour;
+		border-bottom: solid thick $disabled-colour;
+		border-radius: 3px;
+		&::after {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: 40px;
+			height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			background-color: $tertiary-colour;
+		}
+	}
+	ul {
+		height: 255px - 20px;
+		width: 180px - 20px;
+		border-radius: 1rem;
+		background-color: $secondary-colour;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		li {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			margin: 0.1rem 0 0.1rem 0.3rem;
+			place-self: flex-start;
+			&:first-child {
+				margin-top: 0.5rem;
+			}
+			&::before {
+				content: '✓';
+				color: $primary-colour;
+				margin-right: 1rem;
+			}
+			&::after {
+				content: '';
+				width: 110px;
+				height: 2px;
+				background-color: $primary-colour;
+			}
+		}
+	}
+}

@@ -11,10 +11,10 @@ export default function useRestService() {
 	const [signal] = useState<CancelTokenSource>(axios.CancelToken.source());
 
 	useEffect(() => {
-		return () => signal.cancel();
+		return () => signal.cancel(`Request Cancelled: ${signal.token.reason?.message}`);
 	}, [signal]);
 
-	const request = async function<RequestType, ResponseType>(
+	async function request<RequestType, ResponseType>(
 		method: 'GET' | 'POST' | 'PUT' | 'DELETE',
 		route: string,
 		data?: RequestType,
@@ -42,34 +42,34 @@ export default function useRestService() {
 		}
 	};
 
-	const get = function<ResponseType>(route: string)
+	async function get<ResponseType>(route: string)
 	: Promise<{ data: ResponseType, status: number }> {
-		return request<null, ResponseType>('GET', route);
+		return await request<null, ResponseType>('GET', route);
 	};
 
-	const post = function<RequestType, ResponseType>(route: string, data: RequestType)
+	async function post<RequestType, ResponseType>(route: string, data: RequestType)
 	: Promise<{ data: ResponseType, status: number }> {
-		return request<RequestType, ResponseType>('POST', route, data);
+		return await request<RequestType, ResponseType>('POST', route, data);
 	};
 
-	const getWithAuth = function<ResponseType>(route: string)
+	async function getWithAuth<ResponseType>(route: string)
 	: Promise<{ data: ResponseType, status: number }> {
-		return request<null, ResponseType>('GET', route, null, true);
+		return await request<null, ResponseType>('GET', route, null, true);
 	};
 
-	const postWithAuth = function<RequestType, ResponseType>(route: string, data: RequestType)
+	async function postWithAuth<RequestType, ResponseType>(route: string, data: RequestType)
 	: Promise<{ data: ResponseType, status: number }> {
-		return request<RequestType, ResponseType>('POST', route, data, true);
+		return await request<RequestType, ResponseType>('POST', route, data, true);
 	};
 
-	const putWithAuth = function<RequestType, ResponseType>(route: string, data: RequestType)
+	async function putWithAuth<RequestType, ResponseType>(route: string, data: RequestType)
 	: Promise<{ data: ResponseType, status: number }> {
-		return request<RequestType, ResponseType>('PUT', route, data, true);
+		return await request<RequestType, ResponseType>('PUT', route, data, true);
 	};
 
-	const deleteWithAuth = function<ResponseType>(route: string)
+	async function deleteWithAuth<ResponseType>(route: string)
 	: Promise<{ data: ResponseType, status: number }> {
-		return request<null, ResponseType>('DELETE', route, null, true);
+		return await request<null, ResponseType>('DELETE', route, null, true);
 	};
 
 	return {
