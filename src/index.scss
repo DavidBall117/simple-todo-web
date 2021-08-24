@@ -1,3 +1,5 @@
+@import "Styles/colours";
+
 body {
 	margin: 0;
 	// font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,7 +8,7 @@ body {
 	// font-family: "Lucida Sans Typewriter", "Lucida Console", monaco,
 	// 	"Bitstream Vera Sans Mono", monospace;
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-	font-weight: bolder;
+	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -14,4 +16,8 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	color: $primary-text-colour;
 }

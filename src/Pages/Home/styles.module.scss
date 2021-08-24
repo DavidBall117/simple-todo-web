@@ -1,13 +1,16 @@
 @import "Styles/_colours";
+@import "Styles/_variables";
+@import "Styles/_layout";
 
 .container {
 	display: flex;
 	flex-direction: row;
 	height: 100vh;
-	background-color: $surface-colour;
+	background: $surface-colour;
 }
 
 .nav {
+	z-index: $nav-index;
 	display: flex;
 	flex-direction: column;
 	background-color: $background-colour;
@@ -15,5 +18,76 @@
 
 .main {
 	flex: 1;
+	overflow: auto;
 	padding: 0.5rem 2rem;
+	h1 {
+		border-bottom: solid thin $primary-text-colour;
+	}
+}
+
+.row {
+	align-items: center;
+	padding: 0.5rem 1rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	display: flex;
+}
+
+.rowImgRight {
+	flex-direction: column-reverse;
+	@include laptop {
+		flex-direction: row;
+	}
+}
+
+.rowImgLeft {
+	flex-direction: column;
+	@include laptop {
+		flex-direction: row;
+	}
+}
+
+.left {
+	@include laptop {
+		margin-right: 3rem;
+	}
+}
+
+.right {
+	@include laptop {
+		margin-left: 3rem;
+	}
+}
+
+.cards {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	@include laptop {
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-around;
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	text-align: center;
+	margin: 1rem 0;
+	max-width: 300px;
+	@include laptop {
+		margin: 0 1rem;
+	}
+	img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		object-fit: cover;
+		box-shadow: $shadow;
+		margin-bottom: 1rem;
+	}
 }
