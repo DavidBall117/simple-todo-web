@@ -23,6 +23,15 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+	&::-webkit-scrollbar-track {
+		background: $surface-colour;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $tertiary-colour;
+	}
 }
 
 .main {
