@@ -1,5 +1,6 @@
 import AppLink from 'Components/Routing/AppLink';
 import FadeIn from 'Components/Visual/FadeIn';
+import Heading from 'Components/Common/Heading';
 import ListGraphic from 'Components/Visual/ListGraphic';
 import MasterLayout from 'Layouts/MasterLayout';
 import Row from 'Components/Common/Row';
@@ -38,9 +39,9 @@ export default function Home(): JSX.Element {
 
 	return (
 		<MasterLayout loading={isLoading}>
-			<h1 className={styles.title}>
-				{`welcome${name !== '' ? `, ${name}!` : '!'}`.toLocaleLowerCase()}
-			</h1>
+			<Heading>
+				{`welcome${name !== '' ? `, ${name}!` : '!'}`}
+			</Heading>
 			<Row className={styles.row}>
 				<AppLink
 					label="create a list"

@@ -1,7 +1,13 @@
 @import "Styles/_colours";
+@import "Styles/_layout";
 
 .heading {
-	color: $secondary-text-colour;
+	color: $primary-text-colour;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	text-transform: lowercase;
+	text-align: center;
+	@include laptop {
+		text-align: left;
+	}
 }

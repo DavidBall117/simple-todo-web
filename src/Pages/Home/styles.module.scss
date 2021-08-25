@@ -2,13 +2,6 @@
 @import "Styles/_layout";
 @import "Styles/_colours";
 
-.title {
-	text-align: center;
-	@include laptop {
-		text-align: left;
-	}
-}
-
 .row {
 	padding: 0.5rem 1rem;
 	margin-top: 2rem;
