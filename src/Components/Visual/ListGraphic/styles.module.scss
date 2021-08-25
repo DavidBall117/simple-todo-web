@@ -1,7 +1,7 @@
 @import "Styles/_colours";
 @import "Styles/_variables";
 
-.graphic {
+.board {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -12,57 +12,103 @@
 	position: relative;
 	margin-top: 20px;
 	box-shadow: $shadow;
-	span {
+}
+
+.clip {
+	position: absolute;
+	top: -10px;
+	left: 50px;
+	height: 30px;
+	width: 100px;
+	background-color: $tertiary-colour;
+	border-bottom: solid thick $disabled-colour;
+	border-radius: 3px;
+	&::after {
+		content: "";
 		position: absolute;
 		top: -10px;
-		left: 50px;
-		height: 30px;
-		width: 100px;
+		left: 40px;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
 		background-color: $tertiary-colour;
-		border-bottom: solid thick $disabled-colour;
-		border-radius: 3px;
+	}
+}
+
+.list {
+	height: 255px - 20px;
+	width: 180px - 20px;
+	border-radius: 1rem;
+	background-color: $secondary-colour;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	li {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		margin: 0.1rem 0 0.1rem 0.3rem;
+		place-self: flex-start;
+		&:first-child {
+			margin-top: 0.5rem;
+		}
+		&::before {
+			content: '✓';
+			color: $primary-colour;
+			margin-right: 1rem;
+		}
 		&::after {
-			content: "";
-			position: absolute;
-			top: -10px;
-			left: 40px;
-			height: 20px;
-			width: 20px;
-			border-radius: 50%;
-			background-color: $tertiary-colour;
+			content: '';
+			width: 110px;
+			height: 2px;
+			background-color: $primary-colour;
 		}
 	}
-	ul {
-		height: 255px - 20px;
-		width: 180px - 20px;
-		border-radius: 1rem;
-		background-color: $secondary-colour;
-		padding: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
-		li {
-			list-style: none;
-			display: flex;
-			align-items: center;
-			margin: 0.1rem 0 0.1rem 0.3rem;
-			place-self: flex-start;
-			&:first-child {
-				margin-top: 0.5rem;
-			}
-			&::before {
-				content: '✓';
-				color: $primary-colour;
-				margin-right: 1rem;
-			}
-			&::after {
-				content: '';
-				width: 110px;
-				height: 2px;
-				background-color: $primary-colour;
-			}
-		}
+}
+
+.pencil {
+	position: absolute;
+	width: 200px;
+	height: 40px;
+	border: solid thin $primary-colour;
+	background-color: $tertiary-colour;
+	transform: rotate(45deg);
+	span {
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 4px solid transparent;
+		border-left: 8px solid $primary-colour;
+		border-bottom: 4px solid transparent;
+		position: absolute;
+		right: -36px;
+		top: 15px;
+	}
+	&::before {
+		content: '';
+		display: block;
+		margin: 10px 0;
+		width: 100%;
+		height: 10px;
+		border: 6px solid $primary-colour;
+		border-width: 6px 0;
+	}
+	&::after {
+		content: '';
+		display: block;
+		height: 10px;
+		border: 1px solid $primary-colour;
+		border-width: 1px 1px 0 0;
+		width: 40px;
+		height: 36px;
+		transform: rotate(28deg) skewX(-31deg);
+		position: absolute;
+		right: -21px;
+		top: 2px;
+		background-color: $tertiary-colour;
+		z-index: -1;
 	}
 }

@@ -26,15 +26,19 @@ A simple application to keep track of tasks.
 - [ ] Complete navigation, along with navigation drawer and floating button for mobile.
 - [ ] Create private routes.
 - [ ] 404 page.
-- [ ] Account page.
 - [ ] CreateAccount page.
+- [ ] Storybook integration.
+
+- [ ] Account page.
 - [ ] Logout page.
 - [ ] Lists page.
 - [ ] List page.
 - [ ] Archive page.
-- [ ] Use fontawesome icons.
+
 - [ ] Internationalization
-- [ ] Storybook integration.
 - [ ] Snapshot and unit testing.
+
+## Features List
+
 - [ ] Ability to reset password.
 - [ ] Record completion date for list items and present analytics to user.
