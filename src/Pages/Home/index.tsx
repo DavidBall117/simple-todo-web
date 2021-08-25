@@ -1,3 +1,4 @@
+import AppLink from 'Components/Routing/AppLink';
 import FadeIn from 'Components/Visual/FadeIn';
 import ListGraphic from 'Components/Visual/ListGraphic';
 import MasterLayout from 'Layouts/MasterLayout';
@@ -40,6 +41,23 @@ export default function Home(): JSX.Element {
 			<h1 className={styles.title}>
 				{`welcome${name !== '' ? `, ${name}!` : '!'}`.toLocaleLowerCase()}
 			</h1>
+			<Row className={styles.row}>
+				<AppLink
+					label="create a list"
+					to="/lists"
+					button
+				/>
+				<AppLink
+					label="view your archive"
+					to="/archive"
+					button
+				/>
+				<AppLink
+					label="manage your account"
+					to="/account"
+					button
+				/>
+			</Row>
 			<Row className={`${styles.row} ${styles.rowImgRight}`}>
 				<div>
 					<p className={styles.left}>

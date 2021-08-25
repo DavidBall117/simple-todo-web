@@ -22,11 +22,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .main {
 	padding: 0.5rem 2rem;
 	flex: 1;
+	max-width: 1200px;
 }
 
 .loading {
@@ -37,7 +39,8 @@
 }
 
 .footer {
-	padding: 1rem;
+	width: 100%;
+	padding: 1rem 0;
 	background-color: $tertiary-colour;
 	color: $primary-colour;
 	display: flex;

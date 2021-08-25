@@ -1,4 +1,5 @@
 @import "Styles/_colours";
+@import "Styles/_variables";
 
 .link {
 	color: $secondary-text-colour;
@@ -24,6 +25,28 @@
 			transform: scaleX(1);
 			transform-origin: bottom left;
 		}
+	}
+	&:focus-visible {
+		outline: dashed thin $tertiary-colour;
+	}
+}
+
+.button {
+	text-decoration: none;
+	display: inline-block;
+	color: $secondary-text-colour;
+	background-color: transparent;
+	border: solid thin $secondary-colour;
+	padding: 0.5rem 2rem;
+	margin: 1rem 0;
+	border-radius: 8px;
+	width: 180px;
+	text-align: center;
+	transition: $short;
+	&:hover {
+		color: $primary-colour;
+		background-color: $tertiary-colour;
+		border-color: $tertiary-colour;
 	}
 	&:focus-visible {
 		outline: dashed thin $tertiary-colour;

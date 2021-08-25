@@ -5,10 +5,11 @@ import { LinkProps } from './types';
 
 export default function AppLink({
 	label,
-	to
+	to,
+	button
 }: LinkProps): JSX.Element {
 	return (
-		<Link className={styles.link} to={to}>
+		<Link className={`${button ? styles.button : styles.link}`} to={to}>
 			{label}
 		</Link>
 	);
