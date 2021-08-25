@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Bounce from 'Components/Loaders/Bounce';
 import routes from 'Constants/routes';
 import { RouteData } from 'Constants/types';
+import ScrollToTopButton from 'Components/Common/ScrollToTopButton';
 
 import styles from './styles.module.scss';
 import { MasterLayoutProps } from './types';
@@ -24,7 +25,7 @@ export default function MasterLayout({ children, loading }: MasterLayoutProps): 
 					))}
 				</ul>
 			</nav>
-			<div className={styles.mainContainer}>
+			<div id="MainContainer" className={styles.mainContainer}>
 				<main className={styles.main}>
 					{loading ? (
 						<div className={styles.loading}>
@@ -37,6 +38,9 @@ export default function MasterLayout({ children, loading }: MasterLayoutProps): 
 				<footer className={styles.footer}>
 					&copy; {new Date().getFullYear()} simple-todo
 				</footer>
+				<ScrollToTopButton
+					containerId="MainContainer"
+				/>
 			</div>
 		</div>
 	);

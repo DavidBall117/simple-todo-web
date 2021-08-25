@@ -1,0 +1,32 @@
+@import "Styles/_colours";
+@import "Styles/_variables";
+
+.button {
+	z-index: $nav-index;
+	background-color: $secondary-colour;
+	color: $primary-colour;
+	box-shadow: $shadow;
+	border: solid thin $primary-colour;
+	cursor: pointer;
+	position: fixed;
+	bottom: 0.5rem;
+	right: 0.5rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	padding: 0;
+	&:hover {
+		background-color: $tertiary-colour;
+	}
+	&:focus-visible {
+		outline: dashed thin $tertiary-colour;
+	}
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.show {
+	display: flex;
+}
