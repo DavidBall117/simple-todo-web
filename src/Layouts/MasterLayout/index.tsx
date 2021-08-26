@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import Bounce from 'Components/Loaders/Bounce';
-import routes from 'Constants/routes';
-import { RouteData } from 'Constants/types';
+import Button from 'Components/Input/Button';
 import ScrollToTopButton from 'Components/Common/ScrollToTopButton';
 
 import styles from './styles.module.scss';
@@ -15,14 +14,31 @@ export default function MasterLayout({ children, loading }: MasterLayoutProps): 
 				<span>
 					simple-todo
 				</span>
-				<ul>
-					{routes.map((route: RouteData) => (
-						<li key={route.path}>
-							<Link to={route.path}>
-								{route.title}
-							</Link>
-						</li>
-					))}
+				<ul className={styles.startNav}>
+					<li>
+						<Link to="/lists">
+							todo lists
+						</Link>
+					</li>
+					<li>
+						<Link to="/archive">
+							archive
+						</Link>
+					</li>
+				</ul>
+				<ul className={styles.endNav}>
+					<li>
+						<Link to="/account">
+							account
+						</Link>
+					</li>
+					<li>
+						<Button
+							secondary
+							label="log out"
+							onClick={() => console.log('log out')}
+						/>
+					</li>
 				</ul>
 			</nav>
 			<div id="MainContainer" className={styles.mainContainer}>
